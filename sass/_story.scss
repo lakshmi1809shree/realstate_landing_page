@@ -1,0 +1,49 @@
+.story{
+    &__pictures{
+        background-color: $color-primary;
+        grid-column: full-start/col-end 4;
+        background-image:linear-gradient(rgba($color-primary,.5), rgba($color-primary,.5)), url(../img/back.jpg);
+
+
+
+
+        display: grid;
+        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: repeat(6,1fr);
+        align-items: center;//this will make the img1 to align in center ... and will sort out the problem of expect ratio ..
+    }
+    &__img--1{
+        width: 100%;//this we always do with img
+         grid-row: 2/6;
+         grid-column: 2/6;//after doing this img will not fill the area because img have some expexct ratio associated with them so ... they will try to maintain that ...
+         box-shadow: 0 2rem 5rem rgba(0,0,0,.1);
+    }
+    &__img--2{
+        width: 115%;// this will move the img , toward contet but for making it visible we have to write the z index prop .. 
+        grid-row: 4/6;
+        grid-column: 4/7;
+        z-index: 20;//any number simply works 
+        box-shadow: 0 2rem 5rem rgba(0,0,0,.2);
+    }
+    &__content{
+        background-color:$color-grey-light-1 ;
+        grid-column: col-start 5/-1;
+        
+        padding: 12rem 8vh;//hard coded values se resize karne me problem ho rahi thi isliye hmne .. change  kar diya .. 12rem ko 8vh me .. 
+        /*
+        display: flex;//this will turn all the items sidebyside ..
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        */
+        display: grid;
+        align-content: center;
+        justify-items: start;
+    }
+    &__text{
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-bottom: 4rem;
+    }
+        
+}
